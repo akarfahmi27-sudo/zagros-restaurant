@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>زاگرۆس | ڕێستورانتی کوردی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=Noto+Kufi+Arabic:wght@600;800&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+  --bg:#F3F2EF; --surface:#FFFFFF; --text:#241A15; --muted:#66594F; --line:#DDD6CE;
+  --hero:#2A1912; --hero-text:#F6EFE6;
+  --red:#A81F1A; --red-2:#8A1712; --red-text:#A81F1A;
+  --green-text:#2A6B3C; --veg-bg:#E0EDDC; --sel:#2F6B3A;
+  --gold:#E8A317;
+  --t-g:#E1EAD3; --t-r:#F1D9CF; --t-y:#F4E4B4; --t-n:#E8DFD3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#17100C; --surface:#211710; --text:#F2EAE0; --muted:#B5A798; --line:#3A2B20;
+    --hero:#1E120C; --red:#C63A2E; --red-2:#B02A1F; --red-text:#FF8B78;
+    --green-text:#A9D9B4; --veg-bg:#243523; --sel:#3F8556;
+    --t-g:#26382A; --t-r:#432A22; --t-y:#3E361C; --t-n:#30271F;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#17100C; --surface:#211710; --text:#F2EAE0; --muted:#B5A798; --line:#3A2B20;
+  --hero:#1E120C; --red:#C63A2E; --red-2:#B02A1F; --red-text:#FF8B78;
+  --green-text:#A9D9B4; --veg-bg:#243523; --sel:#3F8556;
+  --t-g:#26382A; --t-r:#432A22; --t-y:#3E361C; --t-n:#30271F;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,"Noto Naskh Arabic",Tahoma,sans-serif;font-size:17px;line-height:1.85}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hero);color:var(--hero-text);border-bottom:1px solid rgba(255,255,255,.12)}
+.top-in{max-width:1180px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-family:"Noto Kufi Arabic",Vazirmatn,sans-serif;font-weight:800;font-size:1.5rem;line-height:1.4}
+.nav{display:flex;align-items:center;gap:22px;font-size:.98rem}
+.nav a{color:inherit;text-decoration:none}
+.nav a.lnk:hover{text-decoration:underline;text-underline-offset:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 26px;border-radius:999px;font-family:inherit;font-weight:600;font-size:1rem;line-height:1.4;border:2px solid transparent;cursor:pointer;text-decoration:none}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-2)}
+.btn-line{border-color:rgba(255,255,255,.5);color:var(--hero-text)}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-sm{padding:8px 20px;font-size:.95rem}
+
+/* kilim band */
+.kilim{height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22' viewBox='0 0 44 22'%3E%3Cpolygon points='22,1 43,11 22,21 1,11' fill='%23A81F1A'/%3E%3Cpolygon points='22,6 34,11 22,16 10,11' fill='%23E8A317'/%3E%3Cpolygon points='22,9 25,11 22,13 19,11' fill='%232A1912'/%3E%3C/svg%3E") repeat-x center}
+
+/* hero */
+.hero{background:var(--hero);color:var(--hero-text);overflow:hidden}
+.hero-in{max-width:1180px;margin:0 auto;padding:clamp(36px,6vw,72px) 24px clamp(44px,7vw,84px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;margin:0 0 20px;padding:4px 16px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.92rem;line-height:1.8}
+.dot{width:9px;height:9px;border-radius:50%;background:#E0705F;display:inline-block}
+.dot.on{background:#7FD08F}
+h1,h2,h3{font-family:"Noto Kufi Arabic",Vazirmatn,sans-serif;font-weight:800}
+h1{margin:0 0 18px;font-size:clamp(2rem,5.2vw,3.6rem);line-height:1.45}
+.lead{margin:0 0 30px;max-width:34em;font-size:1.1rem;opacity:.9}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-art{width:min(100%,520px);aspect-ratio:1;justify-self:center}
+.hero-art svg{width:100%;height:100%;display:block;filter:drop-shadow(0 28px 36px rgba(0,0,0,.45))}
+
+/* sections */
+.sec{padding:clamp(56px,9vw,104px) 24px}
+.sec-head{margin-bottom:28px}
+.sec-head h2{margin:0 0 6px;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.5}
+.sec-head p{margin:0;color:var(--muted);max-width:36em}
+
+/* menu */
+.tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;max-width:100%}
+.tab{flex:none;padding:8px 20px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--text);font-family:inherit;font-size:1rem;cursor:pointer}
+.tab:hover{border-color:var(--red)}
+.tab[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.chk{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-size:.98rem}
+.chk input{width:20px;height:20px;accent-color:var(--sel);margin:0}
+.items{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
+.item{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.thumb{width:96px;height:96px;border-radius:22px;display:grid;place-items:center;overflow:hidden}
+.thumb svg{width:90%;height:90%}
+.tone-g{background:var(--t-g)}.tone-r{background:var(--t-r)}.tone-y{background:var(--t-y)}.tone-n{background:var(--t-n)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.row h3{margin:0;font-size:1.08rem;line-height:1.6}
+.price{font-weight:600;white-space:nowrap;color:var(--red-text);font-size:.98rem}
+.it{margin:0;direction:ltr;text-align:right;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;color:var(--muted);font-size:.98rem;line-height:1.5}
+.desc{margin:6px 0 0;color:var(--muted);font-size:.95rem;line-height:1.75}
+.veg{display:inline-block;margin-top:8px;padding:0 12px;border-radius:999px;background:var(--veg-bg);color:var(--green-text);font-size:.82rem;line-height:1.8}
+.empty{grid-column:1/-1;padding:32px 0;color:var(--muted)}
+
+/* gallery */
+.gal{background:var(--surface);border-block:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,20vw,230px);gap:14px}
+.tile{position:relative;margin:0;border-radius:28px;overflow:hidden;display:grid;place-items:center}
+.tile svg{width:82%;height:82%}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile.big svg{width:88%;height:88%}
+.tile figcaption{position:absolute;inset-inline:0;bottom:0;padding:26px 18px 12px;background:linear-gradient(transparent,rgba(20,10,5,.66));color:#fff;font-size:.93rem;line-height:1.6}
+
+/* reserve */
+.res{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(32px,6vw,72px);align-items:start}
+.hours{margin:22px 0 0;padding:0;list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.addr{margin:22px 0 0;color:var(--muted)}
+.addr strong{color:var(--text);font-weight:600}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(20px,4vw,36px)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:18px;min-width:0}
+.field label,.field .lbl,legend{display:block;margin-bottom:6px;font-weight:600;font-size:.98rem;padding:0}
+fieldset{border:0;margin:0 0 18px;padding:0;min-width:0}
+input[type=text],input[type=tel],input[type=date],textarea{width:100%;padding:11px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--text);font-family:inherit;font-size:1rem;line-height:1.6}
+input:focus-visible,textarea:focus-visible{outline-offset:1px}
+.step{display:flex;align-items:center;gap:14px;min-height:50px}
+.step button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);color:var(--text);font-size:1.4rem;line-height:1;cursor:pointer;font-family:inherit}
+.step button:hover{border-color:var(--red)}
+.step output{min-width:2ch;text-align:center;font-weight:600;font-size:1.15rem}
+.hint{margin:6px 0 0;font-size:.88rem;color:var(--muted)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{min-width:86px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--text);font-family:inherit;font-size:.98rem;cursor:pointer}
+.slot:hover:not(:disabled){border-color:var(--sel)}
+.slot[aria-pressed="true"]{background:var(--sel);border-color:var(--sel);color:#fff}
+.slot:disabled{opacity:.45;text-decoration:line-through;cursor:not-allowed}
+.err{min-height:1.8em;margin:0 0 10px;color:var(--red-text);font-size:.95rem}
+.submit{width:100%}
+.done h3{margin:0 0 8px;font-size:1.4rem}
+.done dl{margin:18px 0;display:grid;grid-template-columns:auto 1fr;gap:6px 20px}
+.done dt{color:var(--muted)}
+.done dd{margin:0;font-weight:600}
+.done .note{color:var(--muted);font-size:.9rem}
+
+footer{background:var(--hero);color:var(--hero-text);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:28px 24px}
+
+/* hero moment */
+.t{transform-box:fill-box;transform-origin:center}
+.anim .t{animation:drop .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 45ms + .2s)}
+@keyframes drop{from{opacity:0;transform:translateY(-44px) scale(1.5)}to{opacity:1;transform:none}}
+
+@media (max-width:860px){
+  .hero-in{grid-template-columns:1fr}
+  .items{grid-template-columns:1fr}
+  .res{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile.big{grid-column:span 2}
+}
+@media (max-width:560px){
+  .top-in{padding:8px 16px}
+  .nav{gap:14px}
+  .nav .hide-s{display:none}
+  .sec{padding-inline:16px}
+  .hero-in{padding-inline:16px}
+  .g2{grid-template-columns:1fr}
+  .item{grid-template-columns:80px minmax(0,1fr)}
+  .thumb{width:80px;height:80px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .anim .t{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top" aria-label="زاگرۆس">
+      <span id="sun" aria-hidden="true"></span>
+      زاگرۆس
+    </a>
+    <nav class="nav" aria-label="مێنوی سەرەکی">
+      <a class="lnk" href="#menu">مێنیو</a>
+      <a class="lnk hide-s" href="#gallery">وێنەکان</a>
+      <a class="lnk hide-s" href="#reserve">کات و شوێن</a>
+      <a class="btn btn-red btn-sm" href="#reserve">حجزکردن</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <p class="status" id="status"></p>
+      <h1>خواردنی کوردەواری، بە تامی ماڵ</h1>
+      <p class="lead">کەباب لەسەر خەڵوز، دۆڵمە و برنجی زەعفەران، هەموو ڕۆژێک بە دەستی خۆمان ئامادە دەکرێن.</p>
+      <div class="cta">
+        <a class="btn btn-red" href="#reserve">مێزێک حجز بکە</a>
+        <a class="btn btn-line" href="#menu">مێنیو ببینە</a>
+      </div>
+    </div>
+    <div class="hero-art" id="heroArt"></div>
+  </div>
+  <div class="kilim" aria-hidden="true"></div>
+</section>
+
+<section class="sec" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>مێنیو</h2>
+      <p>نرخەکان بە دینارە. کەبابەکان لە کاتی داواکردن لەسەر خەڵوز دەبرژێن.</p>
+    </div>
+    <div class="tools">
+      <div class="tabs" id="tabs" role="group" aria-label="بەشەکانی مێنیو"></div>
+      <label class="chk"><input type="checkbox" id="veg"> تەنیا خواردنی بێ گۆشت</label>
+    </div>
+    <ul class="items" id="items" aria-live="polite"></ul>
+  </div>
+</section>
+
+<section class="sec gal" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>لە مەتبەخی ئێمە</h2>
+      <p>چەند خواردنێک کە زۆر داوا دەکرێن.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="sec" id="reserve">
+  <div class="wrap res">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>مێزێک حجز بکە</h2>
+        <p>ڕێکەوت و کات و ژمارەی کەسەکان هەڵبژێرە، ئێمە مێزەکەت ئامادە دەکەین.</p>
+      </div>
+      <ul class="hours" aria-label="کاتەکانی کارکردن">
+        <li><span>شەممە تا پێنجشەممە</span><strong id="h1"></strong></li>
+        <li><span>هەینی</span><strong id="h2"></strong></li>
+      </ul>
+      <p class="addr"><strong>هەولێر، شەقامی ٦٠ مەتری</strong><br>تەلەفۆن: <span dir="ltr">٠٧٥٠ ٠٠٠ ٠٠٠٠</span></p>
+    </div>
+
+    <div class="panel">
+      <form id="rf" novalidate>
+        <div class="g2">
+          <div class="field"><label for="name">ناو</label><input type="text" id="name" autocomplete="name"></div>
+          <div class="field"><label for="phone">ژمارەی مۆبایل</label><input type="tel" id="phone" inputmode="tel" dir="ltr" style="text-align:right" autocomplete="tel" placeholder="0750 000 0000"></div>
+        </div>
+        <div class="g2">
+          <div class="field"><label for="date">ڕێکەوت</label><input type="date" id="date"></div>
+          <div class="field">
+            <span class="lbl" id="gl">ژمارەی کەس</span>
+            <div class="step" role="group" aria-labelledby="gl">
+              <button type="button" id="plus" aria-label="یەک کەس زیاتر">+</button>
+              <output id="gn" aria-live="polite">٢</output>
+              <button type="button" id="minus" aria-label="یەک کەس کەمتر">−</button>
+            </div>
+            <p class="hint" id="gh" hidden>بۆ زیاتر لە ٨ کەس، تکایە تەلەفۆن بکە.</p>
+          </div>
+        </div>
+        <fieldset>
+          <legend>کات</legend>
+          <div class="slots" id="slots"></div>
+        </fieldset>
+        <div class="field"><label for="note">تێبینی (ئارەزوومەندانە)</label><textarea id="note" rows="3" placeholder="بۆ نموونە: ڕۆژی لەدایکبوونە، یان کورسی منداڵ پێویستە"></textarea></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn btn-red submit" type="submit">حجزەکە بنێرە</button>
+      </form>
+      <div class="done" id="done" hidden>
+        <h3>حجزەکەت تۆمار کرا</h3>
+        <dl id="sum"></dl>
+        <p class="note">ئەم وەشانە تاقیکارییە و داواکارییەکە هێشتا بۆ ڕێستورانت نانێردرێت.</p>
+        <button class="btn btn-red" type="button" id="again">حجزێکی تر</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="kilim" aria-hidden="true"></div>
+  <div class="wrap">
+    <strong style="font-family:'Noto Kufi Arabic',Vazirmatn,sans-serif">زاگرۆس</strong>
+    <span>ڕێستورانتی کوردی، هەولێر</span>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const ku=s=>String(s).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const en=s=>String(s).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+const money=n=>ku(String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'٬'))+' دینار';
+
+/* ---------- brand mark: sun ---------- */
+(function(){
+  let o='<svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="6" fill="#E8A317"/>';
+  for(let i=0;i<12;i++){const a=i*Math.PI/6;o+=`<path d="M${(15+Math.cos(a)*9).toFixed(1)} ${(15+Math.sin(a)*9).toFixed(1)}L${(15+Math.cos(a)*13).toFixed(1)} ${(15+Math.sin(a)*13).toFixed(1)}" stroke="#E8A317" stroke-width="2.4" stroke-linecap="round"/>`}
+  $('sun').innerHTML=o+'</svg>';
+})();
+
+/* ---------- illustrations ---------- */
+const R=seed=>{let s=seed;return()=>{s=(s*1664525+1013904223)%4294967296;return s/4294967296}};
+const LEAF='<path d="M-16 0C-8-12 8-12 16 0C8 12-8 12-16 0Z" fill="#2F7D3B"/><path d="M-14 0H14" stroke="#1F5A29" stroke-width="1.6"/>';
+const GAR={
+ tomato:'<circle r="21" fill="#C7331F"/><circle r="21" fill="none" stroke="#8E1F12" stroke-width="2"/><circle cx="-7" cy="-6" r="6" fill="#E4604C" opacity=".8"/><path d="M-6 -2L6 6M4 -8L8 0" stroke="#3B1F14" stroke-width="2.4" stroke-linecap="round" opacity=".6"/><path d="M0 -22L-5 -14L5 -14Z" fill="#3E6B2A"/>',
+ pepper:'<path d="M-30 0Q-20-11 0-10Q22-10 32 2Q22 12 0 10Q-20 11-30 0Z" fill="#5C9440"/><path d="M-22-3Q0-8 22 0" stroke="#8CC060" stroke-width="2.5" fill="none" opacity=".8"/><path d="M-14 4L-8-4M4 6L10-2M16 3L20-3" stroke="#2C4A1A" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>',
+ onion:'<circle r="16" fill="none" stroke="#D9B5D0" stroke-width="6"/><circle r="8" fill="none" stroke="#EAD3E4" stroke-width="4"/>',
+ parsley:LEAF+'<g transform="rotate(70)">'+LEAF+'</g>'
+};
+function tray(seed,anim){
+  const r=R(seed);
+  let o='<svg viewBox="0 0 400 400" aria-hidden="true" focusable="false"'+(anim?' class="anim"':'')+'>';
+  o+='<circle cx="200" cy="200" r="194" fill="#C07A3C"/><circle cx="200" cy="200" r="194" fill="none" stroke="#8F5424" stroke-width="5"/><circle cx="200" cy="200" r="180" fill="none" stroke="#E2A96C" stroke-width="2" opacity=".6"/><circle cx="200" cy="200" r="172" fill="none" stroke="#E2A96C" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" opacity=".7"/>';
+  o+='<circle cx="200" cy="200" r="154" fill="#F2E7C6"/>';
+  for(let i=0;i<120;i++){const a=r()*6.283,d=Math.sqrt(r())*148,x=(200+Math.cos(a)*d).toFixed(1),y=(200+Math.sin(a)*d).toFixed(1);o+=`<ellipse cx="${x}" cy="${y}" rx="5" ry="1.8" fill="${i%3?'#FFF9E6':'#E9B93E'}" transform="rotate(${r()*180|0} ${x} ${y})"/>`}
+  for(let i=0;i<40;i++){const a=r()*6.283,d=Math.sqrt(r())*146;o+=`<circle cx="${(200+Math.cos(a)*d).toFixed(1)}" cy="${(200+Math.sin(a)*d).toFixed(1)}" r="1.5" fill="#8E2A2A" opacity=".55"/>`}
+  let n=0;
+  const marks=[...Array(8)].map((_,j)=>`M${-52+j*15} -8L${-46+j*15} 8`).join('');
+  for(let i=0;i<5;i++){
+    const y=200+(i-2)*30+(i%2?4:-4);
+    o+=`<g transform="translate(200 ${y}) rotate(-18)"><g class="t" style="--i:${n++}"><line x1="-92" x2="92" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"/><rect x="-68" y="-11" width="136" height="22" rx="11" fill="#8B4A27"/><rect x="-62" y="-8" width="124" height="5" rx="2.5" fill="#B06A35" opacity=".8"/><path d="${marks}" stroke="#5A2E14" stroke-width="2.4" stroke-linecap="round" opacity=".55"/></g></g>`;
+  }
+  const kinds=['tomato','parsley','pepper','onion','parsley','tomato','pepper','parsley','onion','tomato','pepper','parsley'];
+  kinds.forEach((k,j)=>{
+    const a=j*0.5236+.2+r()*.15,d=127+r()*5,x=200+Math.cos(a)*d,y=200+Math.sin(a)*d;
+    o+=`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r()*360|0})"><g class="t" style="--i:${n++}">${GAR[k]}</g></g>`;
+  });
+  return o+'</svg>';
+}
+const svg=inner=>`<svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">${inner}</svg>`;
+const PLATE='<circle cx="100" cy="100" r="94" fill="#F6F6F1"/><circle cx="100" cy="100" r="94" fill="none" stroke="#D5D9CC" stroke-width="3"/><circle cx="100" cy="100" r="74" fill="#EEEEE6"/>';
+const leafAt=(x,y,rot,s)=>`<g transform="translate(${x} ${y}) rotate(${rot}) scale(${s})">${LEAF}</g>`;
+const wedge=(x,y,rot,s)=>`<g transform="translate(${x} ${y}) rotate(${rot}) scale(${s})"><path d="M-18 0A18 18 0 0 1 18 0Z" fill="#F4E36B"/><path d="M-14 0A14 14 0 0 1 14 0Z" fill="#FAF0A0"/><path d="M0 0V-14M-9 -1L-7 -11M9 -1L7 -11" stroke="#E5CC3C" stroke-width="1.4"/></g>`;
+const RIM='stroke="#D5D9CC" stroke-width="3"';
+function grains(seed,n,x0,y0,w,h){
+  const r=R(seed);let o='';
+  for(let i=0;i<n;i++){const x=(x0+r()*w).toFixed(1),y=(y0+r()*h).toFixed(1);o+=`<ellipse cx="${x}" cy="${y}" rx="4" ry="1.7" fill="${i%3?'#FFF6D8':'#E9B93E'}" transform="rotate(${r()*180|0} ${x} ${y})"/>`}
+  return o;
+}
+const charMarks=(n,step,x0)=>[...Array(n)].map((_,j)=>`M${x0+j*step} -8L${x0+6+j*step} 8`).join('');
+const skewer=(y,rot,col)=>`<g transform="translate(100 ${y}) rotate(${rot})"><line x1="-84" x2="84" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"/><rect x="-62" y="-11" width="124" height="22" rx="11" fill="${col}"/><rect x="-58" y="-8" width="116" height="5" rx="2.5" fill="#C27B45" opacity=".55"/><path d="${charMarks(7,15,-46)}" stroke="#4A2410" stroke-width="2.4" stroke-linecap="round" opacity=".5"/></g>`;
+const shish=(y,cols)=>`<g transform="translate(100 ${y})"><line x1="-84" x2="84" stroke="#B4B4B4" stroke-width="3" stroke-linecap="round"/>${cols.map((c,i)=>`<rect x="${-66+i*28}" y="-13" width="26" height="26" rx="7" fill="${c}"/><rect x="${-62+i*28}" y="-10" width="10" height="5" rx="2" fill="#fff" opacity=".28"/>`).join('')}</g>`;
+
+const ART={
+ shorba(){return svg(PLATE+'<circle cx="100" cy="100" r="64" fill="#D08A2A"/><circle cx="100" cy="100" r="56" fill="#E5A63C"/><path d="M62 96Q80 82 100 96T138 96" stroke="#F3C86A" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M70 116Q90 104 110 116T140 114" stroke="#F3C86A" stroke-width="3" fill="none" opacity=".8"/><circle cx="88" cy="106" r="2.6" fill="#B9701F"/><circle cx="118" cy="82" r="2.6" fill="#B9701F"/>'+wedge(146,64,35,.9)+leafAt(96,92,-20,.6))},
+ dolma(){
+  const roll=(x,y,r)=>`<g transform="translate(${x} ${y}) rotate(${r})"><rect x="-26" y="-9" width="52" height="18" rx="9" fill="#6B8F38"/><rect x="-26" y="-9" width="52" height="18" rx="9" fill="none" stroke="#4C6A24" stroke-width="2"/><path d="M-14-8L-10 8M-2-8L2 8M10-8L14 8" stroke="#4C6A24" stroke-width="1.6" opacity=".7"/></g>`;
+  return svg(PLATE+[[72,70,-12],[128,66,10],[70,98,8],[130,96,-8],[100,84,0],[74,126,-6],[126,124,10],[100,112,4]].map(a=>roll(...a)).join('')+wedge(100,152,0,.9)+leafAt(150,138,30,.7));
+ },
+ kubba(){
+  const k=(x,y,r)=>`<g transform="translate(${x} ${y}) rotate(${r})"><path d="M-30 0Q-16-20 0-20Q16-20 30 0Q16 20 0 20Q-16 20-30 0Z" fill="#C9822F"/><path d="M-30 0Q-16-20 0-20Q16-20 30 0" fill="none" stroke="#E0A257" stroke-width="3" opacity=".7"/><circle cx="-8" cy="-5" r="2" fill="#8F5420"/><circle cx="8" cy="4" r="2" fill="#8F5420"/><circle cx="2" cy="-9" r="1.6" fill="#8F5420"/><circle cx="-14" cy="6" r="1.6" fill="#8F5420"/></g>`;
+  return svg(PLATE+k(72,72,-20)+k(128,70,15)+k(74,124,10)+k(128,126,-15)+wedge(100,100,0,.8)+leafAt(100,150,10,.6));
+ },
+ salad(){
+  let o=PLATE;
+  for(let i=0;i<7;i++){const a=i*6.283/7,x=(100+Math.cos(a)*50).toFixed(1),y=(100+Math.sin(a)*50).toFixed(1);o+=`<circle cx="${x}" cy="${y}" r="15" fill="#A7C97A" stroke="#6E9A46" stroke-width="2"/><circle cx="${x}" cy="${y}" r="9" fill="#D6E8B4"/>`}
+  for(let i=0;i<5;i++){const a=.5+i*6.283/5,x=(100+Math.cos(a)*24).toFixed(1),y=(100+Math.sin(a)*24).toFixed(1);o+=`<circle cx="${x}" cy="${y}" r="13" fill="#D0342A"/><circle cx="${x}" cy="${y}" r="7" fill="#E5695A"/>`}
+  for(let i=0;i<4;i++){const a=i*1.6+.3,x=(100+Math.cos(a)*38).toFixed(1),y=(100+Math.sin(a)*38).toFixed(1);o+=`<circle cx="${x}" cy="${y}" r="9" fill="none" stroke="#D9B5D0" stroke-width="4"/>`}
+  return svg(o+leafAt(100,100,0,.7)+leafAt(100,100,90,.7));
+ },
+ kebab(){return svg(PLATE+skewer(72,-4,'#8B4A27')+skewer(102,-4,'#93502B')+'<g transform="translate(58 142)">'+GAR.tomato+'</g><g transform="translate(140 140)">'+GAR.pepper+'</g><g transform="translate(100 144) scale(.8)">'+GAR.onion+'</g>')},
+ shishC(){return svg(PLATE+shish(70,['#E3A44A','#5C9440','#E3A44A','#C7331F','#E3A44A'])+shish(100,['#5C9440','#E3A44A','#C7331F','#E3A44A','#5C9440'])+shish(130,['#E3A44A','#C7331F','#E3A44A','#5C9440','#E3A44A'])+leafAt(100,154,0,.6))},
+ shishL(){return svg(PLATE+shish(70,['#8B4A27','#D9B5D0','#8B4A27','#5C9440','#8B4A27'])+shish(100,['#D9B5D0','#8B4A27','#5C9440','#8B4A27','#D9B5D0'])+shish(130,['#8B4A27','#5C9440','#8B4A27','#D9B5D0','#8B4A27'])+leafAt(100,154,0,.6))},
+ sini(){return tray(31,false)},
+ biryani(){
+  const r=R(3);
+  let o=PLATE+'<path d="M40 122Q44 60 100 56Q156 60 160 122Q100 140 40 122Z" fill="#F0E2B5"/>'+grains(3,80,58,72,84,44);
+  o+='<g transform="translate(100 96) rotate(-10)"><ellipse rx="34" ry="20" fill="#A85A28"/><ellipse rx="34" ry="20" fill="none" stroke="#7B3D18" stroke-width="2.5"/><path d="M-20-6Q0-14 20-6" stroke="#C97C43" stroke-width="3" fill="none"/><rect x="28" y="-5" width="20" height="10" rx="5" fill="#F3EBD8"/></g>';
+  for(let i=0;i<7;i++)o+=`<ellipse cx="${(62+r()*76).toFixed(1)}" cy="${(70+r()*50).toFixed(1)}" rx="5" ry="2.6" fill="#E9D3A5" transform="rotate(${r()*180|0} 100 100)"/>`;
+  for(let i=0;i<6;i++)o+=`<circle cx="${(62+r()*76).toFixed(1)}" cy="${(74+r()*46).toFixed(1)}" r="3" fill="#5E2A5A"/>`;
+  return svg(o+leafAt(100,136,0,.6));
+ },
+ quzi(){
+  const r=R(6);
+  let o=PLATE+'<ellipse cx="100" cy="106" rx="76" ry="56" fill="#F0E2B5"/>'+grains(6,90,40,64,120,86);
+  o+='<g transform="translate(100 96) rotate(-15)"><path d="M-40 6Q-40-22-6-24Q30-24 40-4Q40 18 4 22Q-40 24-40 6Z" fill="#9A5228"/><path d="M-30-6Q-6-18 22-10" stroke="#C4803F" stroke-width="3.5" fill="none" stroke-linecap="round"/><rect x="34" y="-6" width="30" height="12" rx="6" fill="#F3EBD8"/></g>';
+  for(let i=0;i<8;i++)o+=`<ellipse cx="${(52+r()*96).toFixed(1)}" cy="${(112+r()*34).toFixed(1)}" rx="5" ry="2.6" fill="#E9D3A5" transform="rotate(${r()*180|0} 100 130)"/>`;
+  for(let i=0;i<8;i++){const x=(56+r()*88).toFixed(1),y=(132+r()*16).toFixed(1);o+=`<path d="M${x} ${y}q6-6 12 0" stroke="#7B3D18" stroke-width="2.4" fill="none" stroke-linecap="round"/>`}
+  return svg(o+leafAt(66,70,-20,.6));
+ },
+ fasolia(){
+  const r=R(8);
+  let o=PLATE+'<circle cx="86" cy="88" r="56" fill="#8E3A20"/><circle cx="86" cy="88" r="49" fill="#B14B2A"/>';
+  for(let i=0;i<26;i++){const a=r()*6.283,d=Math.sqrt(r())*42,x=(86+Math.cos(a)*d).toFixed(1),y=(88+Math.sin(a)*d).toFixed(1);o+=`<ellipse cx="${x}" cy="${y}" rx="8" ry="5" fill="#F6EEDA" transform="rotate(${r()*180|0} ${x} ${y})"/>`}
+  o+='<circle cx="142" cy="140" r="30" fill="#F7F1DE"/>'+grains(8,40,122,122,40,36);
+  return svg(o+leafAt(78,80,-20,.7));
+ },
+ nan(){
+  const bread=(x,y,r,c1,c2)=>`<g transform="translate(${x} ${y}) rotate(${r})"><ellipse rx="80" ry="58" fill="${c1}"/><ellipse rx="80" ry="58" fill="none" stroke="#B27A33" stroke-width="4"/><ellipse rx="66" ry="44" fill="${c2}"/><circle cx="-24" cy="-10" r="4" fill="#B98A44"/><circle cx="0" cy="8" r="4" fill="#B98A44"/><circle cx="26" cy="-6" r="4" fill="#B98A44"/><circle cx="-8" cy="-22" r="3" fill="#B98A44"/><circle cx="34" cy="16" r="3" fill="#B98A44"/><ellipse cx="-30" cy="14" rx="10" ry="6" fill="#8F5A26" opacity=".5"/><ellipse cx="30" cy="-24" rx="8" ry="5" fill="#8F5A26" opacity=".5"/></g>`;
+  return svg(bread(104,120,6,'#CF9A50','#DDAE68')+bread(96,92,-8,'#DDAA5E','#EDC680'));
+ },
+ lahm(){
+  const r=R(14);let o=PLATE+'<circle cx="100" cy="100" r="72" fill="#D9A55A"/><circle cx="100" cy="100" r="64" fill="#B4472A"/>';
+  for(let i=0;i<22;i++){const a=r()*6.283,d=Math.sqrt(r())*58;o+=`<circle cx="${(100+Math.cos(a)*d).toFixed(1)}" cy="${(100+Math.sin(a)*d).toFixed(1)}" r="${(2+r()*2).toFixed(1)}" fill="#8A2E1A"/>`}
+  for(let i=0;i<16;i++){const a=r()*6.283,d=Math.sqrt(r())*58;o+=`<circle cx="${(100+Math.cos(a)*d).toFixed(1)}" cy="${(100+Math.sin(a)*d).toFixed(1)}" r="2" fill="#5C9440"/>`}
+  return svg(o+wedge(150,150,-40,1)+leafAt(60,150,20,.7));
+ },
+ baklava(){
+  const d=(x,y)=>`<g transform="translate(${x} ${y}) rotate(45)"><rect x="-26" y="-26" width="52" height="52" rx="6" fill="#D9A035"/><rect x="-26" y="-26" width="52" height="52" rx="6" fill="none" stroke="#A8741B" stroke-width="3"/><path d="M-26-9H26M-26 9H26M-9-26V26M9-26V26" stroke="#B98424" stroke-width="2"/><circle r="6" fill="#8DB255"/></g>`;
+  return svg(PLATE+d(100,64)+d(64,110)+d(136,110));
+ },
+ qaymakh(){
+  return svg(PLATE+'<circle cx="90" cy="98" r="56" fill="#fff" '+RIM+'/><circle cx="90" cy="98" r="46" fill="#FBF7EA"/><circle cx="90" cy="98" r="28" fill="#E0A02A"/><path d="M70 92Q80 82 90 92T110 92M72 106Q84 96 96 106T110 104" stroke="#F3C86A" stroke-width="3" fill="none" stroke-linecap="round"/><g transform="translate(150 140) rotate(-25)"><rect x="-22" y="-12" width="44" height="24" rx="10" fill="#E3B872"/><rect x="-18" y="-8" width="36" height="7" rx="3" fill="#F0CD8E" opacity=".8"/></g><g transform="translate(146 66) rotate(20)"><rect x="-18" y="-10" width="36" height="20" rx="9" fill="#DDAE68"/></g>');
+ },
+ kulicha(){
+  const petals=[...Array(6)].map((_,k)=>`<path d="M0 0Q10-10 0-20" fill="none" stroke="#9A6128" stroke-width="2" transform="rotate(${k*60})"/>`).join('');
+  const c=(x,y)=>`<g transform="translate(${x} ${y})"><circle r="26" fill="#C98A45"/><circle r="26" fill="none" stroke="#9A6128" stroke-width="3"/>${petals}<circle r="5" fill="#9A6128"/></g>`;
+  return svg(PLATE+c(68,72)+c(132,76)+c(100,132));
+ },
+ tea(){
+  return svg('<ellipse cx="100" cy="158" rx="76" ry="16" fill="#F6F6F1" '+RIM+'/><path d="M68 40Q54 96 72 134Q80 152 100 152Q120 152 128 134Q146 96 132 40Z" fill="#fff" fill-opacity=".4" stroke="#C9B58A" stroke-width="3"/><path d="M63 68Q56 100 72 134Q80 148 100 148Q120 148 128 134Q144 100 137 68Z" fill="#B5561C" opacity=".92"/><path d="M76 82Q72 108 82 128" stroke="#E9A25E" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/><rect x="138" y="140" width="15" height="15" rx="3" fill="#fff" stroke="#D5D9CC" stroke-width="2" transform="rotate(14 145 147)"/>');
+ },
+ dough(){
+  return svg('<rect x="118" y="8" width="8" height="84" rx="4" transform="rotate(14 122 50)" fill="#4E8B4A"/><path d="M64 60L136 60L129 166Q128 172 122 172L78 172Q72 172 71 166Z" fill="#F7F4E8"/><path d="M62 40L138 40L130 168Q129 176 122 176L78 176Q71 176 70 168Z" fill="#fff" fill-opacity=".3" stroke="#B8C4B0" stroke-width="3"/><ellipse cx="100" cy="60" rx="36" ry="5" fill="#fff"/><circle cx="84" cy="100" r="3" fill="#fff" opacity=".8"/><circle cx="112" cy="130" r="4" fill="#fff" opacity=".8"/>'+leafAt(84,44,-25,.8)+leafAt(108,42,20,.8)+leafAt(96,38,-5,.7));
+ },
+ espresso(){
+  return svg('<circle cx="100" cy="100" r="88" fill="#F6F6F1" '+RIM+'/><rect x="140" y="88" width="42" height="24" rx="12" fill="#fff" '+RIM+'/><circle cx="100" cy="100" r="56" fill="#fff" '+RIM+'/><circle cx="100" cy="100" r="44" fill="#7B4A26"/><circle cx="100" cy="100" r="38" fill="#3F2415"/><path d="M76 84Q90 70 110 72" stroke="#7B4A26" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>');
+ },
+ coffee(){return this.espresso()}
+};
+
+/* ---------- hero + status + hours ---------- */
+$('heroArt').innerHTML=tray(11,true);
+$('h1').textContent=ku('12:00 – 23:00');
+$('h2').textContent=ku('13:00 – 23:00');
+(function(){
+  const d=new Date(),h=d.getHours()+d.getMinutes()/60,[o,c]=d.getDay()===5?[13,23]:[12,23],open=h>=o&&h<c;
+  $('status').innerHTML='<i class="dot'+(open?' on':'')+'"></i><span>'+(open?'ئێستا کراوەیە، تا '+ku('23:00'):'ئێستا داخراوە')+'</span>';
+})();
+
+/* ---------- menu ---------- */
+const CATS=[['starters','پێشخواردن'],['grill','کەباب و برژاو'],['rice','برنج و خۆرش'],['bread','نان و هەوێر'],['dessert','شیرینی'],['drinks','خواردنەوە']];
+const MENU=[
+ {c:'starters',k:'shorba',ku:'شۆربای عەدەس',it:'Lentil Soup',d:'شۆربای نیسکی سوور لەگەڵ لیمۆ و نانی برژاو.',p:3500,v:1,t:'y'},
+ {c:'starters',k:'dolma',ku:'دۆڵمە',it:'Dolma',d:'گەڵای ترێ پڕکراو بە برنج و گۆشت و سەوزەی تازە، هێواش لێنراو.',p:9000,v:0,t:'g'},
+ {c:'starters',k:'kubba',ku:'کوبە',it:'Kubba',d:'توێژاڵی برنج پڕکراو بە گۆشتی گا، پیاز و بادەم، سوورکراوەتەوە.',p:8000,v:0,t:'y'},
+ {c:'starters',k:'salad',ku:'سەلاتەی کوردی',it:'Kurdish Salad',d:'خیار، تەماتە، پیاز و پارسلی لەگەڵ سماق و زەیتی زەیتوون.',p:4500,v:1,t:'g'},
+ {c:'grill',k:'kebab',ku:'کەبابی گۆشت',it:'Kebab',d:'گۆشتی گا و مەڕی هاڕدراو، لەسەر خەڵوز برژاو، لەگەڵ تەماتە و بیبەری برژاو.',p:11000,v:0,t:'r'},
+ {c:'grill',k:'shishC',ku:'شیشی مریشک',it:'Chicken Shish',d:'پارچەی مریشکی مەرینەکراو بە ماست و زەعفەران، لەسەر خەڵوز.',p:12000,v:0,t:'y'},
+ {c:'grill',k:'shishL',ku:'شیشی مەڕ',it:'Lamb Shish',d:'گۆشتی مەڕی نەرم لەگەڵ پیاز و بیبەر، لەسەر خەڵوز.',p:16000,v:0,t:'n'},
+ {c:'grill',k:'sini',ku:'سینی کەباب',it:'Mixed Grill Tray',d:'کەباب، شیش، تەماتە و بیبەری برژاو لەسەر برنج، بۆ دوو کەس.',p:38000,v:0,t:'r'},
+ {c:'rice',k:'biryani',ku:'بریانی',it:'Biryani',d:'برنجی زەعفەران لەگەڵ مریشک، بادەم و کشمیش.',p:12000,v:0,t:'y'},
+ {c:'rice',k:'quzi',ku:'قووزی',it:'Quzi',d:'مەڕی هێواش برژاو لەسەر برنج، بادەم و پیازی سوورکراو.',p:20000,v:0,t:'n'},
+ {c:'rice',k:'fasolia',ku:'فاسۆلیا و برنج',it:'Fasolia with Rice',d:'لۆبیای سپی لە سۆسی تەماتە، لەگەڵ برنجی سپی.',p:8000,v:1,t:'r'},
+ {c:'bread',k:'nan',ku:'نانی تەنووری',it:'Tannur Bread',d:'نانی تازەی تەنووری، گەرم.',p:1000,v:1,t:'n'},
+ {c:'bread',k:'lahm',ku:'لەحمەعەجین',it:'Lahmajun',d:'هەوێری تەنک و گۆشتی هاڕدراو، لەگەڵ لیمۆ و پارسلی.',p:4000,v:0,t:'r'},
+ {c:'dessert',k:'baklava',ku:'بەقڵاوە',it:'Baklava',d:'توێژاڵی ناسک لەگەڵ فستق و شەربەتی هەنگوین.',p:5000,v:1,t:'y'},
+ {c:'dessert',k:'qaymakh',ku:'قەیماخ و هەنگوین',it:'Qaymakh & Honey',d:'قەیماخی تازە لەگەڵ هەنگوین و نان.',p:4500,v:1,t:'n'},
+ {c:'dessert',k:'kulicha',ku:'کولێچە',it:'Kulicha',d:'کولێچەی پڕکراو بە خورما، لەگەڵ چا.',p:3500,v:1,t:'y'},
+ {c:'drinks',k:'tea',ku:'چای کوردی',it:'Kurdish Tea',d:'چای ڕەشی کوردی لە ئیستکانی تایبەت.',p:1000,v:1,t:'r'},
+ {c:'drinks',k:'dough',ku:'دۆ',it:'Doogh',d:'دۆی ساردی ماست لەگەڵ نەعنا.',p:1500,v:1,t:'g'},
+ {c:'drinks',k:'coffee',ku:'قاوەی تورکی',it:'Turkish Coffee',d:'قاوەی تورکی لە فنجانی بچووک.',p:2000,v:1,t:'n'}
+];
+let cat='starters',veg=false;
+function renderTabs(){
+  $('tabs').innerHTML=CATS.map(([id,n])=>`<button class="tab" type="button" data-c="${id}" aria-pressed="${id===cat}">${n}</button>`).join('');
+}
+function renderMenu(){
+  const list=MENU.filter(m=>m.c===cat&&(!veg||m.v));
+  $('items').innerHTML=list.length?list.map(m=>`<li class="item"><div class="thumb tone-${m.t}">${ART[m.k]()}</div><div><div class="row"><h3>${m.ku}</h3><span class="price">${money(m.p)}</span></div><p class="it">${m.it}</p><p class="desc">${m.d}</p>${m.v?'<span class="veg">بێ گۆشت</span>':''}</div></li>`).join(''):'<li class="empty">هیچ خواردنێکی بێ گۆشت لەم بەشەدا نییە.</li>';
+}
+$('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;cat=b.dataset.c;renderTabs();renderMenu()});
+$('veg').addEventListener('change',e=>{veg=e.target.checked;renderMenu()});
+renderTabs();renderMenu();
+
+/* ---------- gallery ---------- */
+$('grid').innerHTML=[
+ ['big','r',tray(21,false),'سینی کەبابی تایبەت، لەسەر خەڵوز و لەگەڵ برنجی زەعفەران'],
+ ['','g',ART.dolma(),'دۆڵمەی گەڵای ترێ'],
+ ['','y',ART.biryani(),'بریانی زەعفەران'],
+ ['','n',ART.baklava(),'بەقڵاوە بە فستق'],
+ ['','r',ART.tea(),'چای کوردی لە ئیستکان']
+].map(([s,t,art,cap])=>`<figure class="tile ${s} tone-${t}">${art}<figcaption>${cap}</figcaption></figure>`).join('');
+
+/* ---------- reservation ---------- */
+const HOURS=[12,13,14,15,18,19,20,21];
+let slot=null,guests=2;
+const today=()=>{const d=new Date();return new Date(d-d.getTimezoneOffset()*60000).toISOString().slice(0,10)};
+const isFull=(h,date)=>(([...date].reduce((a,c)=>a+c.charCodeAt(0),0)+h)%6===0);
+function slotOff(h,date){
+  const fri=new Date(date+'T12:00:00').getDay()===5&&h<13;
+  const past=date===today()&&h<=new Date().getHours();
+  return fri||past||isFull(h,date);
+}
+function renderSlots(){
+  const date=$('date').value||today();
+  if(slot!==null&&slotOff(slot,date))slot=null;
+  $('slots').innerHTML=HOURS.map(h=>`<button type="button" class="slot" data-h="${h}" aria-pressed="${slot===h}" ${slotOff(h,date)?'disabled':''}>${ku(h+':00')}${isFull(h,date)?' (پڕە)':''}</button>`).join('');
+}
+$('date').min=today();$('date').value=today();
+renderSlots();
+$('date').addEventListener('change',renderSlots);
+$('slots').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;slot=+b.dataset.h;renderSlots()});
+function setGuests(n){guests=Math.max(1,Math.min(12,n));$('gn').textContent=ku(guests);$('gh').hidden=guests<=8}
+$('plus').onclick=()=>setGuests(guests+1);
+$('minus').onclick=()=>setGuests(guests-1);
+$('rf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('name').value.trim(),phone=en($('phone').value).replace(/\D/g,''),date=$('date').value;
+  let msg='',el=null;
+  if(name.length<2){msg='ناوەکەت بنووسە.';el=$('name')}
+  else if(phone.length<10){msg='ژمارەی مۆبایلێکی دروست بنووسە.';el=$('phone')}
+  else if(!date){msg='ڕێکەوتێک هەڵبژێرە.';el=$('date')}
+  else if(slot===null){msg='کاتێک هەڵبژێرە.';el=document.querySelector('.slot:not(:disabled)')}
+  $('err').textContent=msg;
+  if(msg){if(el)el.focus();return}
+  const rows=[['ناو',name],['ڕێکەوت',ku(date)],['کات',ku(slot+':00')],['ژمارەی کەس',ku(guests)]];
+  $('sum').innerHTML=rows.map(([a])=>`<dt>${a}</dt><dd></dd>`).join('');
+  $('sum').querySelectorAll('dd').forEach((dd,i)=>dd.textContent=rows[i][1]);
+  $('rf').hidden=true;$('done').hidden=false;
+});
+$('again').onclick=()=>{
+  $('rf').reset();$('date').value=today();slot=null;setGuests(2);renderSlots();$('err').textContent='';
+  $('done').hidden=true;$('rf').hidden=false;
+};
+</script>
+</body>
+</html>
